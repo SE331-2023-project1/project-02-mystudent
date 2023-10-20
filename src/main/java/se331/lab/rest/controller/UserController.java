@@ -1,42 +1,55 @@
-package se331.lab.rest.controller;
+package se331.lab.rest.Controller;
 
-import se331.lab.rest.Entity.UserDTO;
-import se331.lab.rest.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
+import jakarta.annotation.PostConstruct;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.server.ResponseStatusException;
+import se331.lab.rest.Entity.User;
+import org.springframework.stereotype.Controller;
+import se331.lab.rest.Service.UserService;
+
+import java.util.ArrayList;
 import java.util.List;
 
-@RestController
-@RequestMapping("/user")
-
+@Controller
+@RequiredArgsConstructor
 public class UserController {
-    @Autowired
-    private UserServices userServices;
+    final UserService userService;
+
+    @GetMapping("users")
+    public ResponseEntity<?> getUserLists(@RequestParam(value = "_limit",
+    required = false) Integer perPage
+    ,@RequestParam(value = "_page",required = false)Integer page) {
+        List<User> output = null;
+        Integer userSize = userService.getUserSize();
+        HttpHeaders responseHeader = new HttpHeaders();
+        responseHeader.set("x-total-count", String.valueOf(userSize));
+
+            try {
+                output = userService.getUsers(perPage, page);
+                return new ResponseEntity<>(output,responseHeader,HttpStatus.OK);
+            } catch (IndexOutOfBoundsException ex){
+                return new ResponseEntity<>(output,responseHeader,HttpStatus.OK);
+            }
+    }
+
+    @GetMapping("users/{id}")
+    public ResponseEntity<?> getUser(@PathVariable("id") Long id) {
+        User output = userService.getUser(id);
+        if (output != null){
+            return ResponseEntity.ok(output);
+        }else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The Given id is not found");
+        }
+    }
+//    @PostConstruct
+//    public void init() {
+//        userList = new ArrayList<>();
+//
+//    }
 }
-
- @GetMapping("/all")
-    public List<UserDTO> allUsers() {
-        return userServices.findAllUsers();
-    }
-
-
-    @PostMapping("/add")
-    public String addUser(@RequestBody UserDTO userdata) {
-        return userServices.saveUser(userdata);
-
-    }
-
-    @PutMapping("/update")
-    public String updateUser(@RequestBody UserDTO newUserData) {
-        return userServices.updateUser(newUserData);
-    }
-
-    @GetMapping("/find/{id}")
-    public UserDTO getUserById(@PathVariable Integer id) {
-        return userServices.findById(id);
-    }
-
-    @DeleteMapping("/delete")
-    public String deleteUser(@RequestBody UserDTO deleteUserData){
-        return userServices.deleteUser(deleteUserData);
-    }

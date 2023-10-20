@@ -1,54 +1,29 @@
-package se331.lab.rest.service;
+package se331.lab.rest.Service;
 
-import se331.lab.rest.Entity.UserDTO;
-import se331.lab.rest.repository.UserRepository;
-import se331.lab.rest.service.UserService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import se331.lab.rest.Dao.UserDao;
+import se331.lab.rest.Entity.User;
+
 import java.util.List;
 
 @Service
+@RequiredArgsConstructor
 public class UserServiceImpl implements UserService {
-    @Autowired
-    private UserRepository userRepository;
 
-
+    final UserDao userDao;
     @Override
-    public List<UserDTO> findAllUsers() {
-
-     List<UserDTO> allusers = userRepository.findAll();
-    return allusers;
-
+    public Integer getUserSize() {
+        return userDao.getUserSize();
     }
 
     @Override
-    public String saveUser(UserDTO userdata) {
-        userRepository.save(userdata);
-        return "data saved";
+    public List<User> getUsers(Integer pageSize, Integer page) {
+        return userDao.getUsers(pageSize, page);
     }
 
     @Override
-    public String updateUser(UserDTO newUserData) {
-        String msg=null;
-        if (newUserData.getId()!= null){
-    userRepository.save(newUserData);
-    msg="Data updated";
-    }
-       else{
-       msg="Error";}
-
-       return msg;
-    }
-
-    @Override
-    public UserDTO findById(Integer id) {
-        return userRepository.getOne(id);
-    }
-    
-    @Override
-    public String deleteUser(UserDTO deleteUserData)
-    {
-       userRepository.delete(deleteUserData);
-       return "data deleted";
+    public User getUser(Long id) {
+        return userDao.getUser(id);
     }
 }
