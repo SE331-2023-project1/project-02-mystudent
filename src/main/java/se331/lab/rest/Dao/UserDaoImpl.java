@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-@Profile("manual")
+@Profile("db")
 public class UserDaoImpl implements UserDao{
     List<User> userList;
 
@@ -22,32 +22,24 @@ public class UserDaoImpl implements UserDao{
         userList.add(User.builder()
                 .id(101L)
                 .username("admin")
-                .name("Shoyo")
-                .surname("Hinata")
+                .password("admin")
+                .name("The")
+                .surname("Admin")
                 .studentID("642115001")
+                .image("https://t4.ftcdn.net/jpg/04/75/00/99/360_F_475009987_zwsk4c77x3cTpcI3W1C1LU4pOSyPKaqi.jpg")
+                .role("admin")
+                .department("CAMT")
                 .build());
         userList.add(User.builder()
                 .id(102L)
-                .username("teacher")
-                .name("Kenma")
-                .surname("Kotsume")
-                .studentID("642115002")
-                .build());
-        userList.add(User.builder()
-                .id(103L)
-                .username("student")
-                .build());
-        userList.add(User.builder()
-                .id(112L)
-                .username("guest")
-                .build());
-        userList.add(User.builder()
-                .id(116L)
-                .username("abc")
-                .build());
-        userList.add(User.builder()
-                .id(117L)
-                .username("def")
+                .username("admin2")
+                .password("admin2")
+                .name("Joe")
+                .surname("John")
+                .studentID("632115002")
+                .image("https://junkmailimages.blob.core.windows.net/large/fa685acad3d44539bd3d0ffba39c913b.jpg")
+                .role("admin")
+                .department("CAMT")
                 .build());
     }
 

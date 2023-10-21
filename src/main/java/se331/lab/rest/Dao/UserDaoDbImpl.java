@@ -4,10 +4,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Repository;
 import se331.lab.rest.Entity.User;
 import se331.lab.rest.Repository.UserRepository;
 
-import java.util.List;
+//@Repository
 @RequiredArgsConstructor
 @Profile("db")
 public class UserDaoDbImpl implements UserDao{

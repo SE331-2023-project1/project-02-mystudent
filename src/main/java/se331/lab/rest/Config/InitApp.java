@@ -15,9 +15,35 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
         userRepository.save(User.builder()
 
+                .username("student1")
+                .password("student1")
+                .name("Boo")
+                .surname("Bee")
+                .studentID("622115018")
+                .image("https://freesvg.org/img/1547692485.png")
+                .role("student")
+                .advisor("teacher1")
                 .department("CAMT").build());
         userRepository.save(User.builder()
 
-                .department("ECON").build());
+                .username("student2")
+                .password("student2")
+                .name("Anna")
+                .surname("Bell")
+                .studentID("652115007")
+                .image("https://freesvg.org/img/1547692485.png")
+                .role("student")
+                .advisor("teacher1")
+                .department("CAMT").build());
+        userRepository.save(User.builder()
+
+                .username("teacher1")
+                .password("teacher1")
+                .name("Oak")
+                .surname("Okay")
+                .image("https://freesvg.org/img/1547692485.png")
+                .role("teacher")
+                .position("Prof.")
+                .department("CAMT").build());
     }
 }
