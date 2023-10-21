@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-@Profile("db")
+@Profile("manual")
 public class UserDaoImpl implements UserDao{
     List<User> userList;
 
