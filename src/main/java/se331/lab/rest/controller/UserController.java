@@ -42,4 +42,14 @@ public class UserController {
         User output = userService.save(user);
         return ResponseEntity.ok(output);
     }
+
+    @PutMapping("/update/{id}")
+    public ResponseEntity<?> updateUser(@PathVariable("id") Long id) {
+        User output = userService.getUser(id);
+        if (output != null){
+            return ResponseEntity.ok(output);
+        }else {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The Given id is not found");
+        }
+    }
 }

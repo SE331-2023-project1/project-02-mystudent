@@ -6,8 +6,6 @@ import org.springframework.stereotype.Service;
 import se331.lab.rest.Dao.UserDao;
 import se331.lab.rest.Entity.User;
 
-import java.util.List;
-
 @Service
 @RequiredArgsConstructor
 public class UserServiceImpl implements UserService {

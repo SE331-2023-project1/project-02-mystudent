@@ -24,6 +24,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .role("student")
                 .advisor("teacher1")
                 .department("CAMT").build());
+
         userRepository.save(User.builder()
 
                 .username("student2")
