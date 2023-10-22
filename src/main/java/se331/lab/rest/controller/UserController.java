@@ -45,14 +45,31 @@ public class UserController {
 
     @PutMapping("/update/{id}")
     public ResponseEntity<?> updateUser(@PathVariable("id") Long id, @RequestBody User updatedUser) {
-
         User old = userService.getUser(id);
-        old.setName(updatedUser.getName());
-        old.setSurname(updatedUser.getSurname());
-        old.setAdvisor(updatedUser.getAdvisor());
-        old.setImage(updatedUser.getImage());
-        old.setReply(updatedUser.getReply());
+        if (updatedUser.getName() != null){
+            old.setName(updatedUser.getName());
+        }
+        if (updatedUser.getSurname() != null){
+            old.setSurname(updatedUser.getSurname());
+        }
+        if (updatedUser.getImage() != null){
+            old.setImage(updatedUser.getImage());
+        }
+        if (updatedUser.getAdvisor() != null){
+            old.setAdvisor(updatedUser.getAdvisor());
+        }
+        if (updatedUser.getReply() != null){
+            old.setReply(updatedUser.getReply());
+        }
+        
         User output = userService.save(updatedUser);
         return ResponseEntity.ok(output);
     }
+
+//    @DeleteMapping("/delete/{id}")
+//    public ResponseEntity<?> deleteUser(@PathVariable("id") Long id) {
+//        User userToDelete = userService.getUser(id);
+//        userService.deleteUser(userToDelete);
+//        return userToDelete;
+//    }
 }
