@@ -44,12 +44,15 @@ public class UserController {
     }
 
     @PutMapping("/update/{id}")
-    public ResponseEntity<?> updateUser(@PathVariable("id") Long id) {
-        User output = userService.getUser(id);
-        if (output != null){
-            return ResponseEntity.ok(output);
-        }else {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The Given id is not found");
-        }
+    public ResponseEntity<?> updateUser(@PathVariable("id") Long id, @RequestBody User updatedUser) {
+
+        User old = userService.getUser(id);
+        old.setName(updatedUser.getName());
+        old.setSurname(updatedUser.getSurname());
+        old.setAdvisor(updatedUser.getAdvisor());
+        old.setImage(updatedUser.getImage());
+        old.setReply(updatedUser.getReply());
+        User output = userService.save(updatedUser);
+        return ResponseEntity.ok(output);
     }
 }
