@@ -58,6 +58,12 @@ public class TeacherController {
         if (updatedTeacher.getSurname() != null){
             old.setSurname(updatedTeacher.getSurname());
         }
+        if (updatedTeacher.getDepartment() != null){
+            old.setDepartment(updatedTeacher.getDepartment());
+        }
+        if (updatedTeacher.getPosition() != null){
+            old.setPosition(updatedTeacher.getPosition());
+        }
         if (updatedTeacher.getImage() != null){
             old.setImage(updatedTeacher.getImage());
         }
