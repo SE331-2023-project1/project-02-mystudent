@@ -1,13 +1,18 @@
 package se331.lab.rest.Entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.EqualsAndHashCode;
+import lombok.*;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Data
+@Builder
+@Entity
+@NoArgsConstructor
+@AllArgsConstructor
 public class Teacher {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Exclude
@@ -18,7 +23,9 @@ public class Teacher {
     String department;
     String image;
     String teacherID;
-//    @Builder.Default
-//    @OneToMany
-//    List<User> advisee = new ArrayList<>();
+    String username;
+    String password;
+    @Builder.Default
+    @OneToMany
+    List<User> advisee = new ArrayList<>();
 }

@@ -4,15 +4,29 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.stereotype.Component;
+import se331.lab.rest.Entity.Teacher;
 import se331.lab.rest.Entity.User;
+import se331.lab.rest.Repository.TeacherRepository;
 import se331.lab.rest.Repository.UserRepository;
 
 @Component
 @RequiredArgsConstructor
 public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     final UserRepository userRepository;
+    final TeacherRepository teacherRepository;
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
+        teacherRepository.save(Teacher.builder()
+                .username("teacher1")
+                .password("teacher1")
+                .image("")
+                .position("Prof.")
+                .name("Advisor1")
+                .surname("Ajarn")
+                .teacherID("001")
+                .department("CAMT")
+                .build());
+
         userRepository.save(User.builder()
 
                 .username("student1")
