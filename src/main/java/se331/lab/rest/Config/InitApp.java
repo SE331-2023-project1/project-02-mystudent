@@ -22,7 +22,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .studentID("642115001")
                 .image("https://live.staticflickr.com/65535/53133553491_793e26edb5_o.png")
                 .role("student")
-                .advisor("teacher1")
+                .advisorName("")
+                .advisorSurname("")
+                .advisorImage("")
                 .department("CAMT").build());
 
         userRepository.save(User.builder()

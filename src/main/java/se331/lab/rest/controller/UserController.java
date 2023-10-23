@@ -74,11 +74,23 @@ public class UserController {
         if (updatedUser.getImage() != null){
             old.setImage(updatedUser.getImage());
         }
-        if (updatedUser.getAdvisor() != null){
-            old.setAdvisor(updatedUser.getAdvisor());
+        if (updatedUser.getAdvisorName() != null){
+            old.setAdvisorName(updatedUser.getAdvisorName());
+        }
+        if (updatedUser.getAdvisorSurname() != null){
+            old.setAdvisorSurname(updatedUser.getAdvisorSurname());
+        }
+        if (updatedUser.getAdvisorImage() != null){
+            old.setAdvisorImage(updatedUser.getAdvisorImage());
+        }
+        if (updatedUser.getPosition() != null){
+            old.setPosition(updatedUser.getPosition());
         }
         if (updatedUser.getReply() != null){
             old.setReply(updatedUser.getReply());
+        }
+        if (updatedUser.getComment() != null){
+            old.setComment(updatedUser.getComment());
         }
 
         User output = userService.save(updatedUser);

@@ -25,11 +25,15 @@ public class User {
     String surname;
     String image;
     String department;
-    String position;
     String studentID;
+
+    String file;
+    String fileDesc;
+    String advisorName;
+    String advisorSurname;
+    String position;
+    String advisorImage;
+
     String comment;
     String reply;
-    Blob file;
-    String fileDesc;
-    String advisor;
 }
