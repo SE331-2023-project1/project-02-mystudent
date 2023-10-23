@@ -13,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import se331.lab.rest.Service.UserService;
 
 @Controller
+@CrossOrigin(maxAge = 3600)
 @RequiredArgsConstructor
 public class UserController {
     final UserService userService;

@@ -18,6 +18,7 @@ import se331.lab.rest.Service.TeacherService;
 import java.io.IOException;
 
 @Controller
+@CrossOrigin(maxAge = 3600)
 @RequiredArgsConstructor
 public class TeacherController {
     final TeacherService teacherService;

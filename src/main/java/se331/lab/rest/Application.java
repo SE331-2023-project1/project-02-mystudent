@@ -25,6 +25,18 @@ public class Application {
                         .allowedOrigins("http://localhost:3000");
                 registry.addMapping("/users/*")
                         .allowedOrigins("http://localhost:3000");
+                registry.addMapping("/update/*")
+                        .allowedOrigins("http://localhost:3000");
+                registry.addMapping("/teachers")
+                        .allowedOrigins("http://localhost:3000");
+                registry.addMapping("/teachers/*")
+                        .allowedOrigins("http://localhost:3000");
+                registry.addMapping("/updateTeachers/*")
+                        .allowedOrigins("http://localhost:3000");
+                registry.addMapping("/uploadFile/*")
+                        .allowedOrigins("http://localhost:3000");
+                registry.addMapping("/uploadFile")
+                        .allowedOrigins("http://localhost:3000");
             }
         };
     }
