@@ -1,12 +1,7 @@
 package se331.lab.rest.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
-
-import java.sql.Blob;
 
 @Data
 @Builder
@@ -36,4 +31,7 @@ public class User {
 
     String comment;
     String reply;
+
+//    @ManyToOne
+//    Teacher teacher;
 }
