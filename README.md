@@ -12,6 +12,18 @@
 
 ### Working API:
 
+| Method | input                                     | 
+|--------|-------------------------------------------| 
+| GET    | http://localhost:8080/users               | 
+|        | http://localhost:8080/users/id            | 
+|        | http://localhost:8080/teachers            | 
+|        | http://localhost:8080/teachers/id         | 
+|        | http://localhost:8080/uploadFile/fileName | 
+| POST   | http://localhost:8080/users               | 
+|        | http://localhost:8080/teachers            | 
+|        | http://localhost:8080/uploadFile          | 
+| PUT    | http://localhost:8080/update/id           |
+
 Method GET
 http://localhost:8080/users
 http://localhost:8080/users/id
