@@ -16,16 +16,38 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     final TeacherRepository teacherRepository;
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
+
         teacherRepository.save(Teacher.builder()
+
                 .username("teacher1")
                 .password("teacher1")
-                .image("")
+                .name("Keishin")
+                .surname("Ukai")
+                .image("https://live.staticflickr.com/65535/53133761344_316fb142a6_o.png")
                 .position("Prof.")
-                .name("Advisor1")
-                .surname("Ajarn")
-                .teacherID("001")
-                .department("CAMT")
-                .build());
+                .department("CAMT").build());
+
+        teacherRepository.save(Teacher.builder()
+
+                .username("teacher2")
+                .password("teacher2")
+                .name("Yasufumi")
+                .surname("Nekomata")
+                .image("https://live.staticflickr.com/65535/53133764254_86716f4c97_z.jpg")
+                .position("Prof.")
+                .department("CAMT").build());
+
+        teacherRepository.save(Teacher.builder()
+
+                .username("teacher3")
+                .password("teacher3")
+                .name("Takuro")
+                .surname("Oiwake")
+                .image("https://live.staticflickr.com/65535/53133989675_cb25b69df0_o.png")
+                .position("Prof.")
+                .department("CAMT").build());
+
+
 
         userRepository.save(User.builder()
 
@@ -348,37 +370,5 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .position("Prof.")
                 .build());
 
-        userRepository.save(User.builder()
-
-                .username("teacher1")
-                .password("teacher1")
-                .name("Keishin")
-                .surname("Ukai")
-                .image("https://live.staticflickr.com/65535/53133761344_316fb142a6_o.png")
-                .role("teacher")
-                .position("Prof.")
-                .department("CAMT").build());
-
-        userRepository.save(User.builder()
-
-                .username("teacher2")
-                .password("teacher2")
-                .name("Yasufumi")
-                .surname("Nekomata")
-                .image("https://live.staticflickr.com/65535/53133764254_86716f4c97_z.jpg")
-                .role("teacher")
-                .position("Prof.")
-                .department("CAMT").build());
-
-        userRepository.save(User.builder()
-
-                .username("teacher3")
-                .password("teacher3")
-                .name("Takuro")
-                .surname("Oiwake")
-                .image("https://live.staticflickr.com/65535/53133989675_cb25b69df0_o.png")
-                .role("teacher")
-                .position("Prof.")
-                .department("CAMT").build());
     }
 }
