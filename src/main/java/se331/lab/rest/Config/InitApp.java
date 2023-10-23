@@ -32,7 +32,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .username("teacher2")
                 .password("teacher2")
                 .name("Yasufumi")
-                .surname("Nekomata")
+                .surname("Neko.")
                 .image("https://live.staticflickr.com/65535/53133764254_86716f4c97_z.jpg")
                 .position("Prof.")
                 .department("CAMT").build());

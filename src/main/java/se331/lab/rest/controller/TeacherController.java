@@ -4,18 +4,24 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.server.ResponseStatusException;
 import se331.lab.rest.Entity.Teacher;
 import se331.lab.rest.Entity.User;
 import org.springframework.stereotype.Controller;
+import se331.lab.rest.Service.FeedServiceImpl;
 import se331.lab.rest.Service.TeacherService;
+
+import java.io.IOException;
 
 @Controller
 @RequiredArgsConstructor
 public class TeacherController {
     final TeacherService teacherService;
+    final FeedServiceImpl feedService;
 
     @GetMapping("teachers")
     public ResponseEntity<?> getTeacherLists(@RequestParam(value = "_limit", required = false) Integer perPage
@@ -59,5 +65,18 @@ public class TeacherController {
         Teacher output = teacherService.save(updatedTeacher);
         return ResponseEntity.ok(output);
     }
+    @PostMapping("/uploadFile")
+    public ResponseEntity<?> uploadFile(@RequestParam("file")MultipartFile file) throws IOException {
+        String uploadImage = feedService.uploadImage(file);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(uploadImage);
+    }
 
+    @GetMapping("/uploadFile/fileName")
+    public ResponseEntity<?> downloadFile(@PathVariable String fileName){
+        byte[] fileData = feedService.downloadImage(fileName);
+        return ResponseEntity.status(HttpStatus.OK)
+                .contentType(MediaType.valueOf("image/png"))
+                .body(fileData);
+    }
 }
