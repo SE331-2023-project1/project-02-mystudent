@@ -41,4 +41,9 @@ public class UserDaoImpl implements UserDao{
         return user;
     }
 
+//    @Override
+//    public User getUserByStudentID(String studentID) {
+//        return userList.stream().filter(user ->
+//                user.getStudentID().equals(studentID)).findFirst().orElse(null);
+//    }
 }

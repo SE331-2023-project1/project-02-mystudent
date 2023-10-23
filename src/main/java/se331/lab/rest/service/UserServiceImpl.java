@@ -2,6 +2,7 @@ package se331.lab.rest.Service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import se331.lab.rest.Dao.UserDao;
 import se331.lab.rest.Entity.User;
@@ -30,4 +31,11 @@ public class UserServiceImpl implements UserService {
     public User save(User user) {
         return userDao.save(user);
     }
+
+//    @Override
+//    public Page<User> getStudentID(String studentID, Pageable pageable) {
+//        return null;
+//    }
+
+
 }

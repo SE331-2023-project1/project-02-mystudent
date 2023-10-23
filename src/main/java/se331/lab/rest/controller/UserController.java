@@ -37,6 +37,25 @@ public class UserController {
         }
     }
 
+//    @GetMapping("student/{studentID}")
+//    public ResponseEntity<?> getUserByStudentID(@PathVariable("studentID") String studentID) {
+//        User output = userService.getStudentID(studentID);
+//        if (output != null){
+//            return ResponseEntity.ok(output);
+//        }else {
+//            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The Given id is not found");
+//        }
+//    }
+//    @GetMapping("login")
+//    public ResponseEntity<?> logUser(@RequestBody User user) {
+//        User output = userService.getUser(user);
+//        if (output != null){
+//            return ResponseEntity.ok(output);
+//        }else {
+//            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The Given id is not found");
+//        }
+//    }
+
     @PostMapping("/users")
     public ResponseEntity<?> addUser(@RequestBody User user){
         User output = userService.save(user);
@@ -61,7 +80,7 @@ public class UserController {
         if (updatedUser.getReply() != null){
             old.setReply(updatedUser.getReply());
         }
-        
+
         User output = userService.save(updatedUser);
         return ResponseEntity.ok(output);
     }

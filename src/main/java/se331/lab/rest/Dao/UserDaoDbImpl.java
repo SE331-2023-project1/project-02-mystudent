@@ -4,6 +4,8 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Profile;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.querydsl.QPageRequest;
 import org.springframework.stereotype.Repository;
 import se331.lab.rest.Entity.User;
 import se331.lab.rest.Repository.UserRepository;
@@ -28,6 +30,11 @@ public class UserDaoDbImpl implements UserDao{
     public User getUser(Long id) {
         return userRepository.findById(id).orElse(null);
     }
+
+//    @Override
+//    public Page<User> getStudentID(String studentID, Pageable page) {
+//        return userRepository.findByStudentID(studentID, page);
+//    }
 
     @Override
     public User save(User user) {
