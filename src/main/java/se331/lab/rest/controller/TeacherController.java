@@ -79,7 +79,7 @@ public class TeacherController {
                 .body(uploadImage);
     }
 
-    @GetMapping("/uploadFile/fileName")
+    @GetMapping("/uploadFile/{fileName}")
     public ResponseEntity<?> downloadFile(@PathVariable String fileName){
         byte[] fileData = feedService.downloadImage(fileName);
         return ResponseEntity.status(HttpStatus.OK)

@@ -28,5 +28,5 @@ public class Teacher {
 
     @Builder.Default
     @OneToMany
-    List<User> advisee = new ArrayList<>();
+    List<User> adviseeList = new ArrayList<>();
 }

@@ -11,5 +11,5 @@ public interface UserService {
     Page<User> getUsers(Integer pageSize, Integer page);
     User getUser(Long id);
     User save(User user);
-//    Page<User> getStudentID(String studentID, Pageable pageable);
+    Page<User> getUser(String name, Pageable pageable);
 }

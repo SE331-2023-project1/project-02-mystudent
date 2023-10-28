@@ -14,9 +14,9 @@ import java.util.List;
 @AllArgsConstructor
 public class TeacherDto {
     Long id;
+    String position;
     String name;
     String surname;
-    String position;
     String image;
     String department;
     String teacherID;

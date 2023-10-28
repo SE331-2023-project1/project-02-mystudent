@@ -22,8 +22,9 @@ public class User {
     String department;
     String studentID;
 
-    String file;
-    String fileDesc;
+//    String file;
+//    String fileDesc;
+
     String advisorName;
     String advisorSurname;
     String position;
@@ -32,6 +33,6 @@ public class User {
     String comment;
     String reply;
 
-//    @ManyToOne
-//    Teacher teacher;
+    @ManyToOne
+    Teacher teacher;
 }

@@ -27,14 +27,14 @@ public class UserDaoDbImpl implements UserDao{
     }
 
     @Override
+    public Page<User> getUser(String name, Pageable page) {
+        return userRepository.findByNameContainingIgnoreCaseOrStudentID(name, name, page);
+    }
+
+    @Override
     public User getUser(Long id) {
         return userRepository.findById(id).orElse(null);
     }
-
-//    @Override
-//    public Page<User> getStudentID(String studentID, Pageable page) {
-//        return userRepository.findByStudentID(studentID, page);
-//    }
 
     @Override
     public User save(User user) {

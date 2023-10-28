@@ -36,8 +36,8 @@ public class TeacherDaoImpl implements  TeacherDao{
     }
 
     @Override
-    public Teacher save(Teacher advisor) {
-        return teacherRepository.save(advisor);
+    public Teacher save(Teacher teacher) {
+        return teacherRepository.save(teacher);
     }
 
     @Override

@@ -32,10 +32,9 @@ public class UserServiceImpl implements UserService {
         return userDao.save(user);
     }
 
-//    @Override
-//    public Page<User> getStudentID(String studentID, Pageable pageable) {
-//        return null;
-//    }
-
+    @Override
+    public Page<User> getUser(String name, Pageable pageable) {
+        return userDao.getUser(name,pageable);
+    }
 
 }

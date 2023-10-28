@@ -16,5 +16,4 @@ public class OwnTeacherDto {
     String department;
     String position;
     String teacherID;
-    String image;
 }

@@ -14,5 +14,4 @@ public class OwnStudentDto {
     String studentID;
     String name;
     String surname;
-    String image;
 }

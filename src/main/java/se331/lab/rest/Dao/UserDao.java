@@ -8,7 +8,7 @@ import org.springframework.data.domain.Page;
 public interface UserDao {
     Integer getUserSize();
     Page<User> getUsers(Integer pageSize, Integer page);
+    Page<User> getUser(String name, Pageable page);
     User getUser (Long id);
-//    Page<User> getStudentID(String studentID, Pageable page);
     User save(User user);
 }

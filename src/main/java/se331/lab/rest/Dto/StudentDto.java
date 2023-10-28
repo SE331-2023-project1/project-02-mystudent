@@ -15,7 +15,7 @@ public class StudentDto {
     String studentID;
     String name;
     String surname;
-    String department;
     String image;
+    String department;
     OwnTeacherDto teacher;
 }

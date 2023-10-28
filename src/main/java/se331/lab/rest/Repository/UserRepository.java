@@ -11,5 +11,5 @@ import java.util.Optional;
 public interface UserRepository extends JpaRepository<User,Long> {
     List<User> findAll();
 
-//    Page<User> findByStudentID(String studentID, Pageable PageRequest);
+    Page<User> findByNameContainingIgnoreCaseOrStudentID(String name ,String studentID, Pageable PageRequest);
 }
