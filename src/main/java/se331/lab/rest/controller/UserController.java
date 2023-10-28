@@ -11,6 +11,7 @@ import org.springframework.web.server.ResponseStatusException;
 import se331.lab.rest.Entity.User;
 import org.springframework.stereotype.Controller;
 import se331.lab.rest.Service.UserService;
+import se331.lab.rest.Util.LabMapper;
 
 @Controller
 @CrossOrigin(maxAge = 3600)
@@ -25,7 +26,8 @@ public class UserController {
         HttpHeaders responseHeader = new HttpHeaders();
         responseHeader.set("x-total-count",
                 String.valueOf(pageOutput.getTotalElements()));
-        return new ResponseEntity<>(pageOutput.getContent(),responseHeader,HttpStatus.OK);
+//        return new ResponseEntity<>(pageOutput.getContent(),responseHeader,HttpStatus.OK);
+        return new ResponseEntity<>(LabMapper.INSTANCE.getStudentDto(pageOutput.getContent()),responseHeader, HttpStatus.OK);
     }
 
     @GetMapping("users/{id}")
@@ -37,25 +39,6 @@ public class UserController {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The Given id is not found");
         }
     }
-
-//    @GetMapping("student/{studentID}")
-//    public ResponseEntity<?> getUserByStudentID(@PathVariable("studentID") String studentID) {
-//        User output = userService.getStudentID(studentID);
-//        if (output != null){
-//            return ResponseEntity.ok(output);
-//        }else {
-//            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The Given id is not found");
-//        }
-//    }
-//    @GetMapping("login")
-//    public ResponseEntity<?> logUser(@RequestBody User user) {
-//        User output = userService.getUser(user);
-//        if (output != null){
-//            return ResponseEntity.ok(output);
-//        }else {
-//            throw new ResponseStatusException(HttpStatus.NOT_FOUND,"The Given id is not found");
-//        }
-//    }
 
     @PostMapping("/users")
     public ResponseEntity<?> addUser(@RequestBody User user){
