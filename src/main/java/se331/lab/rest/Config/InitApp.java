@@ -85,6 +85,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher2);
+                teacher2.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -101,6 +103,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher1);
+                teacher1.getAdviseeList().add(user);
+
 
         userRepository.save(User.builder()
 
@@ -117,6 +122,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher2);
+                teacher2.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -133,6 +140,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher1);
+                teacher1.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -149,6 +158,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher2);
+                teacher2.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -165,6 +176,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher1);
+                teacher1.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -181,6 +194,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher2);
+                teacher2.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -197,6 +212,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher1);
+                teacher1.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -213,6 +230,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher2);
+                teacher2.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -229,6 +248,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher3);
+                teacher3.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -245,6 +266,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher1);
+                teacher1.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -261,6 +284,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher3);
+                teacher3.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -277,6 +302,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher1);
+                teacher1.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -293,6 +320,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher3);
+                teacher3.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -309,6 +338,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher2);
+                teacher2.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -325,6 +356,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher1);
+                teacher1.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -341,6 +374,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher2);
+                teacher2.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -357,6 +392,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher3);
+                teacher3.getAdviseeList().add(user);
 
         userRepository.save(User.builder()
 
@@ -373,6 +410,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher1);
+                teacher1.getAdviseeList().add(user);
 
     }
 }
