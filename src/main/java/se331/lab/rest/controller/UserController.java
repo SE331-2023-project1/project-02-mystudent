@@ -52,6 +52,9 @@ public class UserController {
         if (updatedUser.getName() != null){
             old.setName(updatedUser.getName());
         }
+        if (updatedUser.getStudentID() != null){
+            old.setStudentID(updatedUser.getStudentID());
+        }
         if (updatedUser.getSurname() != null){
             old.setSurname(updatedUser.getSurname());
         }
