@@ -17,7 +17,9 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
 
-        teacherRepository.save(Teacher.builder()
+        Teacher teacher1,teacher2,teacher3;
+
+        teacher1 = teacherRepository.save(Teacher.builder()
 
                 .username("teacher1")
                 .password("teacher1")
@@ -27,7 +29,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .position("Prof.")
                 .department("CAMT").build());
 
-        teacherRepository.save(Teacher.builder()
+        teacher2 = teacherRepository.save(Teacher.builder()
 
                 .username("teacher2")
                 .password("teacher2")
@@ -37,7 +39,7 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .position("Prof.")
                 .department("CAMT").build());
 
-        teacherRepository.save(Teacher.builder()
+        teacher3 = teacherRepository.save(Teacher.builder()
 
                 .username("teacher3")
                 .password("teacher3")
@@ -48,8 +50,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT").build());
 
 
-
-        userRepository.save(User.builder()
+        User user;
+        user = userRepository.save(User.builder()
 
                 .username("student1")
                 .password("student1")
@@ -64,6 +66,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
                 .department("CAMT")
                 .position("Prof.")
                 .build());
+                user.setTeacher(teacher1);
+                teacher1.getAdviseeList().add(user);
 
 
         userRepository.save(User.builder()
