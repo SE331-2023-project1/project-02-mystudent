@@ -12,4 +12,6 @@ public interface UserService {
     User getUser(Long id);
     User save(User user);
     Page<User> getUser(String name, Pageable pageable);
+
+    User delete(User user);
 }

@@ -37,4 +37,9 @@ public class UserServiceImpl implements UserService {
         return userDao.getUser(name,pageable);
     }
 
+    @Override
+    public User delete(User user) {
+        return null;
+    }
+
 }

@@ -53,7 +53,7 @@ public class TeacherController {
     @PutMapping("/updateTeacher/{id}")
     public ResponseEntity<?> updateTeacher(@PathVariable("id") Long id, @RequestBody Teacher updatedTeacher) {
         Teacher old = teacherService.getTeacher(id);
-        if (updatedTeacher.getName() != null){
+        if (updatedTeacher.getName() != null || updatedTeacher.getName() != ""){
             old.setName(updatedTeacher.getName());
         }
         if (updatedTeacher.getSurname() != null){

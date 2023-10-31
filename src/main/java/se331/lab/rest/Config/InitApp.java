@@ -17,7 +17,8 @@ public class InitApp implements ApplicationListener<ApplicationReadyEvent> {
     @Override
     public void onApplicationEvent(ApplicationReadyEvent applicationReadyEvent) {
 
-        Teacher teacher1,teacher2,teacher3;
+
+                Teacher teacher1,teacher2,teacher3 = new Teacher();
 
         teacher1 = teacherRepository.save(Teacher.builder()
 
