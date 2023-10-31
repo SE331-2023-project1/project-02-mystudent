@@ -22,7 +22,7 @@ import java.io.IOException;
 @RequiredArgsConstructor
 public class TeacherController {
     final TeacherService teacherService;
-    final FeedServiceImpl feedService;
+//    final FeedServiceImpl feedService;
 
     @GetMapping("teachers")
     public ResponseEntity<?> getTeacherLists(@RequestParam(value = "_limit", required = false) Integer perPage
@@ -72,18 +72,18 @@ public class TeacherController {
         Teacher output = teacherService.save(updatedTeacher);
         return ResponseEntity.ok(output);
     }
-    @PostMapping("/uploadFile")
-    public ResponseEntity<?> uploadFile(@RequestParam("file")MultipartFile file) throws IOException {
-        String uploadImage = feedService.uploadImage(file);
-        return ResponseEntity.status(HttpStatus.OK)
-                .body(uploadImage);
-    }
-
-    @GetMapping("/uploadFile/{fileName}")
-    public ResponseEntity<?> downloadFile(@PathVariable String fileName){
-        byte[] fileData = feedService.downloadImage(fileName);
-        return ResponseEntity.status(HttpStatus.OK)
-                .contentType(MediaType.valueOf("image/png"))
-                .body(fileData);
-    }
+//    @PostMapping("/uploadFile")
+//    public ResponseEntity<?> uploadFile(@RequestParam("file")MultipartFile file) throws IOException {
+//        String uploadImage = feedService.uploadImage(file);
+//        return ResponseEntity.status(HttpStatus.OK)
+//                .body(uploadImage);
+//    }
+//
+//    @GetMapping("/uploadFile/{fileName}")
+//    public ResponseEntity<?> downloadFile(@PathVariable String fileName){
+//        byte[] fileData = feedService.downloadImage(fileName);
+//        return ResponseEntity.status(HttpStatus.OK)
+//                .contentType(MediaType.valueOf("image/png"))
+//                .body(fileData);
+//    }
 }
